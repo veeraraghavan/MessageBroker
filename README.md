@@ -2,8 +2,31 @@
 **Purpose**  
 The purpose of this repository is have multiple microservices having application to application integration via Message Brokers. 
 
-https://www.rabbitmq.com/tutorials/amqp-concepts.html
-# Concepts
+# Setup  
+## Installation  
+- Install Erlang(Dependency for Rabbit Mq) - https://www.erlang.org/downloads 
+- Install RabbitMq - https://www.rabbitmq.com/download.html .
+   After rabbit MQ installation start up a local node with the following command
+   
+   Rabbitmqserver.bat start --detached  
+   **Note: The bat file may not be available on the path. On windows it is available at C:\Program Files\RabbitMQ Server\rabbitmq_server-{version}\sbin**  
+   version - Rabbit Mq Version.  
+     
+    Once node is up and running , Admininstation UI is available at http://localhost:15672/ .
+
+- Install Java 
+- Clone the current repository - https://github.com/veeraraghavan/MessageBroker.git  
+  There are 2 spring boot apps to demonstrate message passing. 
+  ordercreate  
+  Navigate to this folder use the following commands
+  `mvn clean install`  
+  `mvn spring-boot:run`
+  orderreplicate  
+  `mvn clean install`  
+  `mvn spring-boot:run`
+
+
+# Concepts (https://www.rabbitmq.com/tutorials/amqp-concepts.html)
 ----------
 1. Exchange  
    An exchange is a interface to which application pushes messages. It is the responsibility of the exchange to push messages to registered queues. 
