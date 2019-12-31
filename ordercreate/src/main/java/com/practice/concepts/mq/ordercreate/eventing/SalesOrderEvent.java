@@ -23,9 +23,9 @@ public class SalesOrderEvent {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void sendMessage(String messgae) {
+    public void sendMessage(String message) {
         String routingKey = "salesorder.create";
-        rabbitTemplate.convertAndSend(topicExchange.getName(), routingKey, messgae);
-        logger.info("Message sent");
+        rabbitTemplate.convertAndSend(topicExchange.getName(), routingKey, message);
+        logger.info(message);
     }
 }

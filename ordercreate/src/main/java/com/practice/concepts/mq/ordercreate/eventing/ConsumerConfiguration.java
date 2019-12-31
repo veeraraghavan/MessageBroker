@@ -21,7 +21,7 @@ public class ConsumerConfiguration implements ApplicationListener<ApplicationRea
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent salesOrderReplicateEvent) {
-        log.info("Message replicated");
+
     }
 
     private String queueName = "salesorder_replicate";

@@ -26,8 +26,8 @@ public class SalesOrderReplicate {
         String routingKey = "salesorder.replicate";
 
         try {
-            Thread.sleep(5000);
-            log.info("Message sent");
+            Thread.sleep(10000);
+            log.info(message);
             rabbitTemplate.convertAndSend(topicExchange.getName(), routingKey, message);
         } catch (InterruptedException e) {
             e.printStackTrace();
